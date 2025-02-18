@@ -21,6 +21,10 @@ configuration of table environment
 |builtInDatabaseName | Specifies the name of the default database in the initial catalog to be created when instantiating a TableEnvironment. This database is an in-memory database that will be used to store all temporary objects (e.g. from TableEnvironment.createTemporaryView(String, Table) or TableEnvironment.createTemporarySystemFunction(String, UserDefinedFunction)) that cannot be persisted because they have no serializable representation.|
 |classLoader| Specifies the classloader to use in the planner for operations related to code generation, UDF loading, operations requiring reflections on user classes, discovery of factories. By default, this is configured using Thread.currentThread().getContextClassLoader(). Modify the ClassLoader only if you know what you're doing.|
 
+## Managing metadata
+
+This Catalog interface is responsible for reading and writing metadata such as database/table/views/UDFs from a registered catalog. It connects a registered catalog and Flink's Table API. This interface only processes permanent metadata objects. In order to process temporary objects, a catalog can also implement the TemporaryOperationListener interface.
+
 ## How to operate data?
 
 The Table object is the core abstraction of the Table API, the Table object describes a pipeline of data transformations, a Table object can actually be considered as a view in SQL terms, the Table object defined method for operating data, such as select field, filter data, join other table and so on.
