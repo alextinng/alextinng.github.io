@@ -23,10 +23,11 @@ configuration of table environment
 
 ## How to operate data?
 
-The Table object is the core abstraction of the Table API, the Table object describes a pipeline of data transformations, a Table object can actually be considered as a view in SQL terms, you can operate data upon a Table object.
+The Table object is the core abstraction of the Table API, the Table object describes a pipeline of data transformations, a Table object can actually be considered as a view in SQL terms, the Table object defined method for operating data, such as select field, filter data, join other table and so on.
 
-four tips you must know:
+things you must know:
 + It does not contain the data itself in any way
++ You can get table schema by getSchema method
 + It describes how to read data from a DynamicTableSource and how to eventually write data to a DynamicTableSink.
 + The declared pipeline can be printed, optimized, and eventually executed in a cluster.
 + The pipeline can work with bounded or unbounded streams which enables both streaming and batch scenarios.
