@@ -55,4 +55,4 @@ Furthermore, a module can provide built-in table source and sink factories which
 
 ### DB functions
 
-Using listFunctions method in Catalog interface to list the names of all functions in the given database. An empty list is returned if none is registered.
+Using ```List<String> listFunctions(String dbName) throws DatabaseNotExistException, CatalogException;``` method in Catalog interface to list the names of all functions in the given database. An empty list is returned if none is registered.
